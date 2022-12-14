@@ -36,3 +36,25 @@ header {
   width: 25px;
   margin: 5px;
 }
+
+#matriz {
+  display: flex;
+  margin: auto;
+  width: 50%;
+  height: 400px;
+}
+
+#pixel-board {
+  justify-content: center;
+  width: 100%;
+  height: 5px;
+  display: flex;
+  padding-top: 50px;
+}
+
+.pixel {
+  max-height: 40px;
+  height: 40px;
+  border: solid black 1px;
+  width: 40px;
+}
