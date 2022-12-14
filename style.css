@@ -11,3 +11,28 @@ header {
   color: white;
   background-color: brown;
 }
+
+#titlePalet {
+  text-align: center;
+  margin-top: 100px;
+
+}
+
+#color-palette {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 50%;
+  padding-top: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.color {
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+}
