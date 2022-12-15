@@ -1,6 +1,6 @@
 window.onload = () => {
   colorPaleteBlack.className += ' selected';
-}
+};
 /* VARIÁVEIS */
 const colorPalete = document.getElementsByClassName('color');
 const colorButton = document.getElementById('button-random-color');
@@ -8,7 +8,7 @@ const colorPaleteBlack = document.getElementById('black');
 colorPaleteBlack.style.backgroundColor = 'black';
 const colors = ['black', 'red', 'green', 'purple'];
 const lastColorPalette = {};
-let colorPalette = [];
+const colorPalette = [];
 let selectedColor = 'rgb(0 , 0 , 0)';
 
 /* Cores padrão */
@@ -40,7 +40,7 @@ function saveColors() {
 saveColors();
 
 /* Matriz */
-const div = document.createElement('div');
+const div = document.createElement('div'); const matriz = document.getElementById('matriz');
 div.id = 'pixel-board';
 matriz.appendChild(div);
 const createCollum = (cells) => {
@@ -57,8 +57,8 @@ const createCollum = (cells) => {
     div.style.margin = 'auto';
     div.style.padding = '30px';
     ul.appendChild(pixel);
-    div.style.height = `${(parseInt(pixel.style.height) * cells) + (cells * 2)}px`;
-    div.style.width = `${(parseInt(pixel.style.height) * cells) + (cells * 2)}px`;
+    div.style.height = `${(parseInt(pixel.style.height, 10) * cells) + (cells * 2)}px`;
+    div.style.width = `${(parseInt(pixel.style.height, 10) * cells) + (cells * 2)}px`;
   }
 };
 
