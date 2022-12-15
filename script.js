@@ -1,6 +1,3 @@
-window.onload = () => {
-  colorPaleteBlack.className += ' selected';
-};
 /* VARIÁVEIS */
 const colorPalete = document.getElementsByClassName('color');
 const colorButton = document.getElementById('button-random-color');
@@ -24,9 +21,11 @@ function standardColors() {
 standardColors();
 
 /* Cor aleatória */
+let rgb = () => Math.round(Math.random() * 255)
+console.log(rgb);
 function colorRandom() {
   for (let index = 1; index < colorPalete.length; index += 1) {
-    colorPalete[index].style.backgroundColor = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}`;
+    colorPalete[index].style.backgroundColor = `rgb(${rgb()}, ${rgb()}, ${rgb()}`;
     colorPalette.push(colorPalete[index].style.backgroundColor);
   }
 }
@@ -103,3 +102,7 @@ clearBoard.addEventListener('click', () => {
     paintPixel[index].style.backgroundColor = 'white';
   }
 });
+
+window.onload = () => {
+    colorPaleteBlack.className += ' selected';
+};
