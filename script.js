@@ -1,8 +1,9 @@
 window.onload = () => {
   standardColors();
   colorPaleteBlack.className += ' selected';
-//   restoreSavedColor();
 };
+console.log(standarColors());
+console.log(colorPaleteBlack);
 
 /* VARIÁVEIS */
 const colorPalete = document.getElementsByClassName('color');
@@ -10,7 +11,7 @@ const colorButton = document.getElementById('button-random-color');
 const colorPaleteBlack = document.getElementById('black');
 colorPaleteBlack.style.backgroundColor = 'black';
 const colors = ['black', 'red', 'green', 'purple'];
-let lastColorPalette = {};
+const lastColorPalette = {};
 const colorPalette = [];
 let selectedColor = 'rgb(0 , 0 , 0)';
 
@@ -37,7 +38,7 @@ colorButton.addEventListener('click', colorRandom);
 
 function saveColors() {
   for (let index = 0; index < colorPalette.length; index += 1) {
-    lastColorPalette[colorPalette + [index]] = colorPalette[index];      
+    lastColorPalette[colorPalette + [index]] = colorPalette[index];
   }
 }
 saveColors();
@@ -48,33 +49,37 @@ div.id = 'pixel-board';
 matriz.appendChild(div);
 const createCollum = (cells) => {
   const ul = document.createElement('ul');
-  ul.style.display = 'block'
+  ul.style.display = 'block';
   div.appendChild(ul);
   for (let index = 0; index < cells; index += 1) {
     const pixel = document.createElement('li');
     pixel.className = 'pixel';
-    pixel.style.listStyle = 'none'
-    pixel.style.width = '40px'
-    pixel.style.height = '40px'
-    div.style.textAlign = 'center'
-    div.style.margin = 'auto'
-    div.style.padding = '30px'
+    pixel.style.listStyle = 'none';
+    pixel.style.width = '40px';
+    pixel.style.height = '40px';
+    div.style.textAlign = 'center';
+    div.style.margin = 'auto';
+    div.style.padding = '30px';
     ul.appendChild(pixel);
-    div.style.height = `${(parseInt(pixel.style.height) * cells) + (cells * 2) }px`
-    div.style.width = `${(parseInt(pixel.style.height) * cells) + (cells * 2)}px`
+    div.style.height = `${(parseInt(pixel.style.height) * cells) + (cells * 2)}px`;
+    div.style.width = `${(parseInt(pixel.style.height) * cells) + (cells * 2)}px`;
   }
 }
 
 function createLines(cells) {
-    for (let index = 0; index < cells; index += 1) {
-        createCollum(cells);
-        
-        
-    }
+  for (let index = 0; index < cells; index += 1) {
+    createCollum(cells);
+  }
 }
 createLines(5);
 
 /* SELECT COLOR */
+function removeAllClass() {
+  for (let index = 0; index < colorPalete.length; index += 1) {
+    colorPalete[index].classList.remove('selected');
+  }
+}
+
 const colorSelect = (event) => {
   const colorSelected = document.querySelector('.color');
   if (event.target.className === 'color') {
@@ -82,12 +87,6 @@ const colorSelect = (event) => {
     event.target.classList.add('selected');
     selectedColor = event.target.style.backgroundColor;
   }
-  }
-
-function removeAllClass() {
-  for (let index = 0; index < colorPalete.length; index += 1) {
-    colorPalete[index].classList.remove('selected')
-    }
 }
 
 for (let index = 0; index < colorPalete.length; index += 1) {
@@ -106,6 +105,6 @@ for (let index = 0; index < paintPixel.length; index++) {
 const clearBoard = document.getElementById('clear-board');
 clearBoard.addEventListener('click', (event) => {
   for (let index = 0; index < paintPixel.length; index++) {
-    paintPixel[index].style.backgroundColor = 'white'       
+    paintPixel[index].style.backgroundColor = 'white';   
   }
 });
