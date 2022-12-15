@@ -1,8 +1,3 @@
-window.onload = () => {
-  standardColors()
-  colorPaleteBlack.className += ' selected';
-};
-
 /* VARIÁVEIS */
 const colorPalete = document.getElementsByClassName('color');
 const colorButton = document.getElementById('button-random-color');
@@ -79,7 +74,6 @@ function removeAllClass() {
 }
 
 const colorSelect = (event) => {
-  let colorSelected = document.querySelector('.color');
   if (event.target.className === 'color') {
     removeAllClass();
     event.target.classList.add('selected');
@@ -93,8 +87,8 @@ for (let index = 0; index < colorPalete.length; index += 1) {
 
 /* PAINT GRID */
 const paintPixel = document.getElementsByClassName('pixel');
-for (let index = 0; index < paintPixel.length; index++) {
-  paintPixel[index].addEventListener('click', (event) =>{
+for (let index = 0; index < paintPixel.length; index += 1) {
+  paintPixel[index].addEventListener('click', (event) => {
     event.target.style.backgroundColor = selectedColor;
   });
 }
@@ -102,7 +96,7 @@ for (let index = 0; index < paintPixel.length; index++) {
 /* CLEAR BOARD */
 const clearBoard = document.getElementById('clear-board');
 clearBoard.addEventListener('click', (event) => {
-  for (let index = 0; index < paintPixel.length; index++) {
-    paintPixel[index].style.backgroundColor = 'white';   
+  for (let index = 0; index < paintPixel.length; index += 1) {
+    paintPixel[index].style.backgroundColor = 'white';
   }
 });
