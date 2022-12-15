@@ -78,6 +78,7 @@ const colorSelect = (event) => {
   if (event.target.className === 'color') {
     removeAllClass();
     event.target.classList.add('selected');
+    selectedColor = event.target.style.backgroundColor;
   }
   }
 
@@ -89,4 +90,12 @@ function removeAllClass() {
 
 for (let index = 0; index < colorPalete.length; index++) {
     colorPalete[index].addEventListener('click', colorSelect);
+}
+
+/* PAINT GRID */
+const paintPixel = document.getElementsByClassName('pixel');
+for (let index = 0; index < paintPixel.length; index++) {
+    paintPixel[index].addEventListener('click', (event) =>{
+        event.target.style.backgroundColor = selectedColor;
+    });
 }
