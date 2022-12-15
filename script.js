@@ -1,6 +1,6 @@
 window.onload = () => {
   standardColors();
-  colorPaleteBlack.className = 'selected'
+  colorPaleteBlack.className += ' selected'
 //   restoreSavedColor();
 }
 
