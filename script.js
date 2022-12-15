@@ -1,5 +1,5 @@
 window.onload = () => {
-    colorPaleteBlack;
+  colorPaleteBlack.className += ' selected';
 }
 /* VARIÁVEIS */
 const colorPalete = document.getElementsByClassName('color');
