@@ -42,24 +42,25 @@ function saveColors() {
 saveColors();
 
 /* Matriz */
+const div = document.createElement('div');
+div.id = 'pixel-board'
+matriz.appendChild(div)
 const createCollum = (cells) => {
-    const grid = document.getElementById('pixel-board');
     const ul = document.createElement('ul');
     ul.style.display = 'block'
-    grid.appendChild(ul);
+    div.appendChild(ul);
         for (let index = 0; index < cells; index += 1) {
             const pixel = document.createElement('li');
             pixel.className = 'pixel';
             pixel.style.listStyle = 'none'
             pixel.style.width = '40px'
             pixel.style.height = '40px'
-            grid.style.textAlign = 'center'
-            grid.style.margin = 'auto'
-            grid.style.padding = '30px'
+            div.style.textAlign = 'center'
+            div.style.margin = 'auto'
+            div.style.padding = '30px'
             ul.appendChild(pixel);
-            grid.style.height = `${(parseInt(pixel.style.height) * cells) + (cells * 2) }px`
-            grid.style.width = `${(parseInt(pixel.style.height) * cells) + (cells * 2)}px`
-            console.log(parseInt(pixel.style.height) * cells);
+            div.style.height = `${(parseInt(pixel.style.height) * cells) + (cells * 2) }px`
+            div.style.width = `${(parseInt(pixel.style.height) * cells) + (cells * 2)}px`
         }
     
 }
@@ -67,6 +68,7 @@ const createCollum = (cells) => {
 function createLines(cells) {
     for (let index = 0; index < cells; index += 1) {
         createCollum(cells);
+        
         
     }
 }
@@ -104,7 +106,6 @@ for (let index = 0; index < paintPixel.length; index++) {
 const clearBoard = document.getElementById('clear-board');
 clearBoard.addEventListener('click', (event) => {
     for (let index = 0; index < paintPixel.length; index++) {
-        paintPixel[index].style.backgroundColor = 'white'
-        
+        paintPixel[index].style.backgroundColor = 'white'       
     }
 })

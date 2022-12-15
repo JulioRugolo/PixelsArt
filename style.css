@@ -53,7 +53,7 @@ header {
 }
 
 #pixel-board {
-  display: flex;
+  display: inline-block;
 }
 
 ul {
