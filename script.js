@@ -16,17 +16,13 @@ let selectedColor = 'rgb(0 , 0 , 0)';
 
 /* Cores padrão */
 function standardColors() {
-    for (let index = 0; index < colorPalete.length; index += 1) {
-      let fillPalete = ''
-      for (let pickColor = 0; pickColor <= colors.length; pickColor += 1) {
-        fillPalete = colors[index];
-        // if (fillPalete === 'black') {
-        //     colorPaleteBlack.className = 'selected';
-        //     colorPaleteBlack.style.blackgroundColor = 'black'
-        // }
-      }
-    colorPalete[index].style.backgroundColor = fillPalete; 
+  for (let index = 0; index < colorPalete.length; index += 1) {
+    let fillPalete = ''
+    for (let pickColor = 0; pickColor <= colors.length; pickColor += 1) {
+      fillPalete = colors[index];
     }
+    colorPalete[index].style.backgroundColor = fillPalete; 
+  }
 }
 
 /* Cor aleatória */
@@ -74,5 +70,23 @@ function createLines(cells) {
         
     }
 }
-
 createLines(5);
+
+/* SELECT COLOR */
+const colorSelect = (event) => {
+  const colorSelected = document.querySelector('.color');
+  if (event.target.className === 'color') {
+    removeAllClass();
+    event.target.classList.add('selected');
+  }
+  }
+
+function removeAllClass() {
+  for (let index = 0; index < colorPalete.length; index++) {
+    colorPalete[index].classList.remove('selected')
+    }
+}
+
+for (let index = 0; index < colorPalete.length; index++) {
+    colorPalete[index].addEventListener('click', colorSelect);
+}
