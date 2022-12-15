@@ -22,6 +22,7 @@ header {
   margin: auto;
   width: 50%;
   padding-top: 10px;
+  text-align: center;
 }
 
 #color-palette {
@@ -54,6 +55,10 @@ header {
 
 #pixel-board {
   display: inline-block;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
 }
 
 ul {
