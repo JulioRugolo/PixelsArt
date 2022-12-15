@@ -1,9 +1,7 @@
 window.onload = () => {
-  standardColors();
+  standardColors()
   colorPaleteBlack.className += ' selected';
 };
-console.log(standarColors());
-console.log(colorPaleteBlack);
 
 /* VARIÁVEIS */
 const colorPalete = document.getElementsByClassName('color');
@@ -12,7 +10,7 @@ const colorPaleteBlack = document.getElementById('black');
 colorPaleteBlack.style.backgroundColor = 'black';
 const colors = ['black', 'red', 'green', 'purple'];
 const lastColorPalette = {};
-const colorPalette = [];
+let colorPalette = [];
 let selectedColor = 'rgb(0 , 0 , 0)';
 
 /* Cores padrão */
@@ -64,7 +62,7 @@ const createCollum = (cells) => {
     div.style.height = `${(parseInt(pixel.style.height) * cells) + (cells * 2)}px`;
     div.style.width = `${(parseInt(pixel.style.height) * cells) + (cells * 2)}px`;
   }
-}
+};
 
 function createLines(cells) {
   for (let index = 0; index < cells; index += 1) {
@@ -81,13 +79,13 @@ function removeAllClass() {
 }
 
 const colorSelect = (event) => {
-  const colorSelected = document.querySelector('.color');
+  let colorSelected = document.querySelector('.color');
   if (event.target.className === 'color') {
     removeAllClass();
     event.target.classList.add('selected');
-    selectedColor = event.target.style.backgroundColor;
+    selectedColor= event.target.style.backgroundColor;
   }
-}
+};
 
 for (let index = 0; index < colorPalete.length; index += 1) {
     colorPalete[index].addEventListener('click', colorSelect);
