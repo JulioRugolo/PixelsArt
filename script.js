@@ -99,3 +99,12 @@ for (let index = 0; index < paintPixel.length; index++) {
         event.target.style.backgroundColor = selectedColor;
     });
 }
+
+/* CLEAR BOARD */
+const clearBoard = document.getElementById('clear-board');
+clearBoard.addEventListener('click', (event) => {
+    for (let index = 0; index < paintPixel.length; index++) {
+        paintPixel[index].style.backgroundColor = 'white'
+        
+    }
+})
