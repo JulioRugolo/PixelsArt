@@ -1,3 +1,6 @@
+window.onload = () => {
+    colorPaleteBlack;
+}
 /* VARIÁVEIS */
 const colorPalete = document.getElementsByClassName('color');
 const colorButton = document.getElementById('button-random-color');
@@ -77,12 +80,12 @@ const colorSelect = (event) => {
   if (event.target.className === 'color') {
     removeAllClass();
     event.target.classList.add('selected');
-    selectedColor= event.target.style.backgroundColor;
+    selectedColor = event.target.style.backgroundColor;
   }
 };
 
 for (let index = 0; index < colorPalete.length; index += 1) {
-    colorPalete[index].addEventListener('click', colorSelect);
+  colorPalete[index].addEventListener('click', colorSelect);
 }
 
 /* PAINT GRID */
@@ -95,7 +98,7 @@ for (let index = 0; index < paintPixel.length; index += 1) {
 
 /* CLEAR BOARD */
 const clearBoard = document.getElementById('clear-board');
-clearBoard.addEventListener('click', (event) => {
+clearBoard.addEventListener('click', () => {
   for (let index = 0; index < paintPixel.length; index += 1) {
     paintPixel[index].style.backgroundColor = 'white';
   }
