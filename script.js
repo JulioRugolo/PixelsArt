@@ -21,7 +21,7 @@ function standardColors() {
 standardColors();
 
 /* Cor aleatória */
-let rgb = () => Math.round(Math.random() * 255)
+const rgb = () => Math.round(Math.random() * 255);
 console.log(rgb);
 function colorRandom() {
   for (let index = 1; index < colorPalete.length; index += 1) {
@@ -79,7 +79,7 @@ const colorSelect = (event) => {
   if (event.target.className === 'color') {
     removeAllClass();
     event.target.classList.add('selected');
-    selectedColor = event.target.style.backgroundColor;
+    return selectedColor = event.target.style.backgroundColor;
   }
 };
 
@@ -104,5 +104,5 @@ clearBoard.addEventListener('click', () => {
 });
 
 window.onload = () => {
-    colorPaleteBlack.className += ' selected';
+  colorPaleteBlack.className += ' selected';
 };
