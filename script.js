@@ -12,14 +12,19 @@ const retrieve = JSON.parse(localStorage.getItem('colorPalette'));
 const rgb = () => Math.round(Math.random() * 255);
 let selectedColor = 'rgb(0 , 0 , 0)';
 let numberOfPixels = 5;
-const localBoardSize = parseInt(localStorage.getItem('boardSize'));
-let retrieveArrayLocalStorage = JSON.parse(localStorage.getItem('randomColor'), Number);
+const localBoardSize = parseInt((localStorage.getItem('boardSize'), 10));
 
-  /* Cores padrão */
+
+/* Cores padrão */
 function standardColors() {
   for (let index = 0; index < colorPalete.length; index += 1) {
     colorPalete[index].style.backgroundColor = colors[index];
   }
+  retrieveColor()
+}
+standardColors();
+
+function retrieveColor() {
   for (let indexLocal = 0; indexLocal < localStorage.length; indexLocal += 1) {
     if (localStorage !== null && localStorage.key(indexLocal) === 'colorPalette') {
       colors = ['black'];
@@ -30,7 +35,6 @@ function standardColors() {
     }
   }
 }
-standardColors();
 
 /* Cor aleatória */
 function colorRandom() {
