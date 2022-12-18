@@ -181,8 +181,8 @@ const botaoVQV = document.getElementById('generate-board');
 botaoVQV.addEventListener('click', () => {
   inputValidate();
   paintPixel.addEventListener('click', () => {
-  for (let index = 0; index < paintPixel.length; index += 1) {
-    paintPixel.style.backgroundColor = selectedColor;
+    for (let index = 0; index < paintPixel.length; index += 1) {
+      paintPixel.style.backgroundColor = selectedColor;
     }
   });
 });
@@ -197,11 +197,11 @@ function loadDraw() {
   for (let index = 0; index < localStorage.length; index += 1) {
     if (localStorage.length > 0 && localStorage.key(index) === 'pixelBoard') {
       paintingOldDraw();
+    }
   }
-}
 }
 loadDraw();
 
 window.onload = () => {
- colorPaleteBlack.className += ' selected';
+  colorPaleteBlack.className += ' selected';
 };
