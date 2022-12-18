@@ -5,7 +5,6 @@ const colorPaleteBlack = document.getElementById('black');
 colorPaleteBlack.style.backgroundColor = 'black';
 colorPaleteBlack.className += ' selected';
 let colors = ['black', 'red', 'green', 'purple'];
-const lastrandomColor = [];
 const div = document.createElement('div');
 const matriz = document.getElementById('matriz');
 const paintPixel = document.getElementsByClassName('pixel');
@@ -13,15 +12,14 @@ const retrieve = JSON.parse(localStorage.getItem('colorPalette'));
 const rgb = () => Math.round(Math.random() * 255);
 let selectedColor = 'rgb(0 , 0 , 0)';
 let numberOfPixels = 5;
-let localBoardSize = parseInt(localStorage.getItem('boardSize'));
-let retrieveArrayLocalStorage = JSON.parse(localStorage.getItem('randomColor'));
+const localBoardSize = parseInt(localStorage.getItem('boardSize'));
+let retrieveArrayLocalStorage = JSON.parse(localStorage.getItem('randomColor'), Number);
 
   /* Cores padrão */
 function standardColors() {
   for (let index = 0; index < colorPalete.length; index += 1) {
     colorPalete[index].style.backgroundColor = colors[index];
   }
-
   for (let indexLocal = 0; indexLocal < localStorage.length; indexLocal += 1) {
     if (localStorage !== null && localStorage.key(indexLocal) === 'colorPalette') {
       colors = ['black'];
@@ -32,13 +30,13 @@ function standardColors() {
     }
   }
 }
-  standardColors();
+standardColors();
 
 /* Cor aleatória */
 function colorRandom() {
   let randomColor = [];
   for (let index = 1; index < colorPalete.length; index += 1) {
-    colorPalete[index].style.backgroundColor = `rgb(${rgb()}, ${rgb()}, ${rgb()}`;
+    colorPalete[index].style.backgroundColor = `rgb(${rgb()}, ${rgb()}, ${rgb()})`;
     randomColor.push(colorPalete[index].style.backgroundColor);
     localStorage.setItem('colorPalette', JSON.stringify(randomColor));
   }
@@ -130,6 +128,8 @@ const clearBoard = document.getElementById('clear-board');
 clearBoard.addEventListener('click', () => {
   for (let index = 0; index < paintPixel.length; index += 1) {
     paintPixel[index].style.backgroundColor = 'white';
+    localStorage.clear();
+    location.reload();
   }
 });
 
