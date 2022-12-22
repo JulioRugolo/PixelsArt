@@ -84,6 +84,7 @@ function createLines(cells) {
 createLines(numberOfPixels);
 
 function pixelSize() {
+  const pixel = document.createElement('li');
   if (numberOfPixels > 20 && numberOfPixels <= 30) {
     pixel.style.width = '30px';
     pixel.style.height = '30px';
