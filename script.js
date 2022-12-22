@@ -58,34 +58,33 @@ if (localBoardSize > 0) {
   numberOfPixels = localBoardSize;
 }
 
-
 const div = document.createElement('div');
 const matriz = document.getElementById('matriz');
 const createCollum = (cells) => {
-const ul = document.createElement('ul');
+  const ul = document.createElement('ul');
   matriz.appendChild(div);
   ul.style.display = 'block';
   div.id = 'pixel-board';
   div.appendChild(ul);
   for (let index = 0; index < cells; index += 1) {
-  const pixel = document.createElement('li');
-  if (numberOfPixels > 20 && numberOfPixels <= 30) {
-    pixel.style.width = '30px'
-    pixel.style.height = '30px'
+    const pixel = document.createElement('li');
+    if (numberOfPixels > 20 && numberOfPixels <= 30) {
+      pixel.style.width = '30px';
+      pixel.style.height = '30px';
+    }
+    if (numberOfPixels > 30 && numberOfPixels <= 40) {
+      pixel.style.width = '25px';
+      pixel.style.height = '25px';
+    }
+    if (numberOfPixels > 40 && numberOfPixels <= 50) {
+      pixel.style.width = '10px';
+      pixel.style.height = '10px';
+    }
+    pixel.className = 'pixel';
+    ul.appendChild(pixel);
+    div.style.height = `${(parseInt(pixel.style.height, 10) * cells) + (cells * 2)}px`;
+    div.style.width = `${(parseInt(pixel.style.height, 10) * cells) + (cells * 2)}px`;
   }
-  if (numberOfPixels > 30 && numberOfPixels <= 40) {
-    pixel.style.width = '25px'
-    pixel.style.height = '25px'
-  }
-  if (numberOfPixels > 40 && numberOfPixels <= 50) {
-    pixel.style.width = '10px'
-    pixel.style.height = '10px'
-  }
-  pixel.className = 'pixel';
-  ul.appendChild(pixel);
-  div.style.height = `${(parseInt(pixel.style.height, 10) * cells) + (cells * 2)}px`;
-  div.style.width = `${(parseInt(pixel.style.height, 10) * cells) + (cells * 2)}px`;
-}
 };
 
 function createLines(cells) {
