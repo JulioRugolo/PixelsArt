@@ -95,14 +95,6 @@ ul {
   padding-top: 10px;
 }
 
-input[ type = 'number' ] {
-  width: 25%;
-  padding: 12px 20px;
-  margin-right: 20px;
-  box-sizing: border-box;
-  border-radius: 20px;
-}
-
 #generate-board , #clear-board {
   padding: 5px;
   border-radius: 20px;
@@ -118,14 +110,6 @@ input[ type = 'number' ] {
     background-position-x: -100px;
     background-repeat: no-repeat;
   }
-
-  input [ type = 'number' ] {
-    width: 10%;
-    padding: 12px 15px;
-    margin-right: 10px;
-    box-sizing: border-box;
-    border-radius: 20px;
-  }
 }
 
 @media only screen and ( max-width : 800px ) {
@@ -136,14 +120,6 @@ input[ type = 'number' ] {
     background-position-x: -100px;
     background-repeat: no-repeat;
   }
-
-  input[ type = 'number' ] {
-    width: 20%;
-    padding: 12px 15px;
-    margin-right: 10px;
-    box-sizing: border-box;
-    border-radius: 20px;
-  }
 }
 
 @media only screen and ( max-width : 400px ) {
@@ -153,14 +129,6 @@ input[ type = 'number' ] {
     background-size: 1600px;
     background-position-x: -800px;
     background-repeat: no-repeat;
-  }
-
-  input[ type = 'number' ] {
-    width: 20%;
-    padding: 8px 15px;
-    margin-right: 5px;
-    box-sizing: border-box;
-    border-radius: 20px;
   }
 
   #generate-board , #clear-board {
@@ -186,14 +154,6 @@ input[ type = 'number' ] {
     background-size: 1550px;
     background-position-x: -700px;
     background-repeat: no-repeat;
-  }
-
-  input[ type = 'number' ] {
-    width: 20%;
-    padding: 5px 15px;
-    margin-right: 5px;
-    box-sizing: border-box;
-    border-radius: 20px;
   }
 
   #generate-board , #clear-board {

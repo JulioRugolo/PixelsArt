@@ -147,8 +147,8 @@ function saveDraw() {
 
 function paint() {
   for (let index = 0; index < paintPixel.length; index += 1) {
-    paintPixel[index].addEventListener('click', () => {
-      paintPixel[index].style.backgroundColor = selectedColor;
+    paintPixel[index].addEventListener('click', (event) => {
+      event.target.style.backgroundColor = selectedColor;
       saveDraw();
     });
   }
