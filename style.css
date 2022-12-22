@@ -95,7 +95,7 @@ ul {
   padding-top: 10px;
 }
 
-input[ type = number ] {
+input[ type = 'number' ] {
   width: 25%;
   padding: 12px 20px;
   margin-right: 20px;
@@ -111,6 +111,7 @@ input[ type = number ] {
 }
 
 @media only screen and ( max-width : 1500px ) {
+
   body {
     background-image: url('./img/bg.jpeg');
     background-size: 1600px;
@@ -118,7 +119,7 @@ input[ type = number ] {
     background-repeat: no-repeat;
   }
 
-  input [type = number ] {
+  input [ type = 'number' ] {
     width: 10%;
     padding: 12px 15px;
     margin-right: 10px;
@@ -128,6 +129,7 @@ input[ type = number ] {
 }
 
 @media only screen and ( max-width : 800px ) {
+
   body {
     background-image: url('./img/bg.jpeg');
     background-size: 1600px;
@@ -135,7 +137,7 @@ input[ type = number ] {
     background-repeat: no-repeat;
   }
 
-  input[ type = number ] {
+  input[ type = 'number' ] {
     width: 20%;
     padding: 12px 15px;
     margin-right: 10px;
@@ -145,6 +147,7 @@ input[ type = number ] {
 }
 
 @media only screen and ( max-width : 400px ) {
+
   body {
     background-image: url('./img/bg.jpeg');
     background-size: 1600px;
@@ -152,7 +155,7 @@ input[ type = number ] {
     background-repeat: no-repeat;
   }
 
-  input[ type = number ] {
+  input[ type = 'number' ] {
     width: 20%;
     padding: 8px 15px;
     margin-right: 5px;
@@ -177,6 +180,7 @@ input[ type = number ] {
 }
 
 @media only screen and ( max-width : 300px ) {
+
   body {
     background-image: url('./img/bg.jpeg');
     background-size: 1550px;
@@ -184,7 +188,7 @@ input[ type = number ] {
     background-repeat: no-repeat;
   }
 
-  input[ type = number ] {
+  input[ type = 'number' ] {
     width: 20%;
     padding: 5px 15px;
     margin-right: 5px;

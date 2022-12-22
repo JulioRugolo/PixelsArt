@@ -68,7 +68,6 @@ const createCollum = (cells) => {
   div.appendChild(ul);
   for (let index = 0; index < cells; index += 1) {
     const pixel = document.createElement('li');
-    pixelSize();
     pixel.className = 'pixel';
     ul.appendChild(pixel);
     div.style.height = `${(parseInt(pixel.style.height, 10) * cells) + (cells * 2)}px`;
@@ -82,22 +81,6 @@ function createLines(cells) {
   }
 }
 createLines(numberOfPixels);
-
-function pixelSize() {
-  const pixel = document.createElement('li');
-  if (numberOfPixels > 20 && numberOfPixels <= 30) {
-    pixel.style.width = '30px';
-    pixel.style.height = '30px';
-  }
-  if (numberOfPixels > 30 && numberOfPixels <= 40) {
-    pixel.style.width = '25px';
-    pixel.style.height = '25px';
-  }
-  if (numberOfPixels > 40 && numberOfPixels <= 50) {
-    pixel.style.width = '10px';
-    pixel.style.height = '10px';
-  }
-}
 
 /* ------ REMOVE MATRIZ ------- */
 const removePixels = () => {
