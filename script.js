@@ -149,6 +149,7 @@ function paint() {
   for (let index = 0; index < paintPixel.length; index += 1) {
     paintPixel[index].addEventListener('click', () => {
       paintPixel[index].style.backgroundColor = selectedColor;
+      paintPixel[index].className += ' painted';
       saveDraw();
     });
   }

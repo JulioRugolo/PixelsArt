@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 header {
@@ -23,7 +24,6 @@ body {
   font-size: 30px;
   font-weight: 600;
   text-shadow: white 1px 1px 5px;
-
 }
 
 #matriz {
@@ -45,7 +45,8 @@ body {
   background-color: white;
 }
 
-.color {
+.color,
+.selected {
   display: flex;
   flex-direction: column;
   border: 1px black solid;
@@ -55,12 +56,7 @@ body {
 }
 
 .selected {
-  display: flex;
-  flex-direction: column;
-  border: 1px black solid;
-  height: 25px;
-  width: 25px;
-  margin: 5px;
+  background-color: #000;
 }
 
 #pixel-board {
@@ -89,49 +85,74 @@ ul {
   height: 40px;
 }
 
+.pixel.painted {
+  animation-name: paintAnimation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes paintAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 #buttonClass {
   justify-content: center;
   text-align: center;
   padding-top: 10px;
 }
 
-#generate-board , #clear-board {
+#generate-board,
+#clear-board {
   padding: 5px;
   border-radius: 20px;
   width: 80px;
   border: 2px black solid;
 }
 
-@media only screen and ( max-width : 1500px ) {
-
+@media only screen and (max-width: 1200px) {
   body {
     background-image: url('./img/bg.jpeg');
-    background-size: 1600px;
-    background-position-x: -100px;
+    background-size: 1400px;
+    background-position-x: -50px;
     background-repeat: no-repeat;
   }
 }
 
-@media only screen and ( max-width : 800px ) {
-
+@media only screen and (max-width: 800px) {
   body {
     background-image: url('./img/bg.jpeg');
-    background-size: 1600px;
-    background-position-x: -100px;
+    background-size: 1200px;
+    background-position-x: -50px;
     background-repeat: no-repeat;
   }
 }
 
-@media only screen and ( max-width : 400px ) {
-
+@media only screen and (max-width: 600px) {
   body {
     background-image: url('./img/bg.jpeg');
-    background-size: 1600px;
-    background-position-x: -800px;
+    background-size: 1000px;
+    background-position-x: -250px;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    background-image: url('./img/bg.jpeg');
+    background-size: 800px;
+    background-position-x: -400px;
     background-repeat: no-repeat;
   }
 
-  #generate-board , #clear-board {
+  #generate-board,
+  #clear-board {
     border-radius: 20px;
     width: 80px;
     border: 2px black solid;
@@ -147,16 +168,16 @@ ul {
   }
 }
 
-@media only screen and ( max-width : 300px ) {
-
+@media only screen and (max-width: 300px) {
   body {
     background-image: url('./img/bg.jpeg');
-    background-size: 1550px;
-    background-position-x: -700px;
+    background-size: 750px;
+    background-position-x: -350px;
     background-repeat: no-repeat;
   }
 
-  #generate-board , #clear-board {
+  #generate-board,
+  #clear-board {
     border-radius: 20px;
     width: 80px;
     border: 2px black solid;
